@@ -216,5 +216,75 @@ Alle weiteren Daten werden einem Projekt zugeordnet.
 
 \* StoragePath
 
+\## Tabelle: Projects
+
+
+
+| Feld          | Typ          | Pflicht |
+
+| ------------- | ------------ | ------- |
+
+| ProjectId     | UUID         | Ja      |
+
+| ProjectNumber | VARCHAR(50)  | Ja      |
+
+| Name          | VARCHAR(255) | Ja      |
+
+| Description   | TEXT         | Nein    |
+
+| CustomerId    | UUID         | Ja      |
+
+| AddressId     | UUID         | Ja      |
+
+| PhaseId       | INTEGER      | Ja      |
+
+| StatusId      | INTEGER      | Ja      |
+
+| Priority      | INTEGER      | Ja      |
+
+| Progress      | INTEGER      | Ja      |
+
+| IsArchived    | BOOLEAN      | Ja      |
+
+| CreatedAt     | TIMESTAMP    | Ja      |
+
+| UpdatedAt     | TIMESTAMP    | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Customer 1:n Projects
+
+\* Address 1:n Projects
+
+\* Project 1:n Tasks
+
+\* Project 1:n Appointments
+
+\* Project 1:n Photos
+
+\* Project 1:n Documents
+
+\* Project 1:n ProjectHistory
+
+
+
+\### Indizes
+
+
+
+\* ProjectNumber
+
+\* CustomerId
+
+\* PhaseId
+
+\* StatusId
+
+\* CreatedAt
+
 
 
