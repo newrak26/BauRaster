@@ -758,5 +758,203 @@ Alle weiteren Daten werden einem Projekt zugeordnet.
 
 \* UploadedAt
 
+\## Tabelle: Notes
+
+
+
+| Feld      | Typ       | Pflicht |
+
+| --------- | --------- | ------- |
+
+| NoteId    | UUID      | Ja      |
+
+| ProjectId | UUID      | Ja      |
+
+| CreatedBy | UUID      | Ja      |
+
+| NoteText  | TEXT      | Ja      |
+
+| CreatedAt | TIMESTAMP | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n Notes
+
+\* User 1:n Notes
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* CreatedAt
+
+
+
+\---
+
+
+
+\## Tabelle: ProjectHistory
+
+
+
+| Feld      | Typ          | Pflicht |
+
+| --------- | ------------ | ------- |
+
+| HistoryId | UUID         | Ja      |
+
+| ProjectId | UUID         | Ja      |
+
+| UserId    | UUID         | Ja      |
+
+| Action    | VARCHAR(255) | Ja      |
+
+| OldValue  | TEXT         | Nein    |
+
+| NewValue  | TEXT         | Nein    |
+
+| CreatedAt | TIMESTAMP    | Ja      |
+
+
+
+\### Beispiele
+
+
+
+\* Projekt erstellt
+
+\* Status geändert
+
+\* Termin erstellt
+
+\* Foto hochgeladen
+
+\* Dokument hinzugefügt
+
+\* Projekt archiviert
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n ProjectHistory
+
+\* User 1:n ProjectHistory
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* CreatedAt
+
+
+
+\---
+
+
+
+\## Tabelle: ProjectPhases
+
+
+
+| PhaseId | Name         |
+
+| ------- | ------------ |
+
+| 1       | Aufnahme     |
+
+| 2       | Termin       |
+
+| 3       | KV in Arbeit |
+
+| 4       | KV versendet |
+
+| 5       | Auftrag      |
+
+| 6       | Ausführung   |
+
+| 7       | Fotodok      |
+
+| 8       | Abschluss    |
+
+| 9       | Archiv       |
+
+
+
+\---
+
+
+
+\## Tabelle: ProjectStatuses
+
+
+
+| Feld      | Typ          |
+
+| --------- | ------------ |
+
+| StatusId  | INTEGER      |
+
+| PhaseId   | INTEGER      |
+
+| Name      | VARCHAR(100) |
+
+| Color     | VARCHAR(20)  |
+
+| SortOrder | INTEGER      |
+
+
+
+\### Beispiele
+
+
+
+\* Neu
+
+\* Geplant
+
+\* Offen
+
+\* Prüfen
+
+\* Läuft
+
+\* Blockiert
+
+\* Erledigt
+
+
+
+\### Beziehungen
+
+
+
+\* ProjectPhase 1:n ProjectStatuses
+
+
+
+\### Indizes
+
+
+
+\* PhaseId
+
+\* Name
+
 
 
