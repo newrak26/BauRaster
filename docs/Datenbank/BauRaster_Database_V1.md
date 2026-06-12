@@ -286,5 +286,227 @@ Alle weiteren Daten werden einem Projekt zugeordnet.
 
 \* CreatedAt
 
+\## Tabelle: Customers
+
+
+
+| Feld          | Typ          | Pflicht |
+
+| ------------- | ------------ | ------- |
+
+| CustomerId    | UUID         | Ja      |
+
+| CompanyName   | VARCHAR(255) | Ja      |
+
+| ContactPerson | VARCHAR(255) | Nein    |
+
+| Phone         | VARCHAR(100) | Nein    |
+
+| Email         | VARCHAR(255) | Nein    |
+
+| Website       | VARCHAR(255) | Nein    |
+
+| Notes         | TEXT         | Nein    |
+
+| CreatedAt     | TIMESTAMP    | Ja      |
+
+| UpdatedAt     | TIMESTAMP    | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Customer 1:n Projects
+
+
+
+\### Indizes
+
+
+
+\* CompanyName
+
+\* ContactPerson
+
+\* Email
+
+
+
+\---
+
+
+
+\## Tabelle: Addresses
+
+
+
+| Feld        | Typ           | Pflicht |
+
+| ----------- | ------------- | ------- |
+
+| AddressId   | UUID          | Ja      |
+
+| Street      | VARCHAR(255)  | Ja      |
+
+| HouseNumber | VARCHAR(50)   | Nein    |
+
+| ZipCode     | VARCHAR(20)   | Ja      |
+
+| City        | VARCHAR(100)  | Ja      |
+
+| Country     | VARCHAR(100)  | Ja      |
+
+| Latitude    | DECIMAL(10,7) | Nein    |
+
+| Longitude   | DECIMAL(10,7) | Nein    |
+
+| CreatedAt   | TIMESTAMP     | Ja      |
+
+| UpdatedAt   | TIMESTAMP     | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Address 1:n Projects
+
+
+
+\### Indizes
+
+
+
+\* ZipCode
+
+\* City
+
+\* Latitude, Longitude
+
+
+
+\---
+
+
+
+\## Tabelle: Roles
+
+
+
+| Feld         | Typ          | Pflicht |
+
+| ------------ | ------------ | ------- |
+
+| RoleId       | UUID         | Ja      |
+
+| Name         | VARCHAR(100) | Ja      |
+
+| Description  | TEXT         | Nein    |
+
+| IsSystemRole | BOOLEAN      | Ja      |
+
+| CreatedAt    | TIMESTAMP    | Ja      |
+
+
+
+\### Standardrollen
+
+
+
+\* Administrator
+
+\* Büro
+
+\* Bauleiter
+
+\* Mitarbeiter
+
+\* Gast
+
+
+
+\### Beziehungen
+
+
+
+\* Role 1:n Users
+
+
+
+\### Indizes
+
+
+
+\* Name
+
+
+
+\---
+
+
+
+\## Tabelle: Users
+
+
+
+| Feld         | Typ          | Pflicht |
+
+| ------------ | ------------ | ------- |
+
+| UserId       | UUID         | Ja      |
+
+| FirstName    | VARCHAR(100) | Ja      |
+
+| LastName     | VARCHAR(100) | Ja      |
+
+| Email        | VARCHAR(255) | Ja      |
+
+| Phone        | VARCHAR(100) | Nein    |
+
+| PasswordHash | TEXT         | Ja      |
+
+| RoleId       | UUID         | Ja      |
+
+| IsActive     | BOOLEAN      | Ja      |
+
+| LastLoginAt  | TIMESTAMP    | Nein    |
+
+| CreatedAt    | TIMESTAMP    | Ja      |
+
+| UpdatedAt    | TIMESTAMP    | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Role 1:n Users
+
+\* User 1:n Tasks
+
+\* User 1:n Appointments
+
+\* User 1:n Photos
+
+\* User 1:n Documents
+
+\* User 1:n ProjectHistory
+
+
+
+\### Indizes
+
+
+
+\* Email
+
+\* RoleId
+
+\* IsActive
+
 
 
