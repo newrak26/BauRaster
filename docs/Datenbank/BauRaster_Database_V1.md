@@ -508,5 +508,255 @@ Alle weiteren Daten werden einem Projekt zugeordnet.
 
 \* IsActive
 
+\## Tabelle: Tasks
+
+
+
+| Feld           | Typ          | Pflicht |
+
+| -------------- | ------------ | ------- |
+
+| TaskId         | UUID         | Ja      |
+
+| ProjectId      | UUID         | Ja      |
+
+| AssignedUserId | UUID         | Ja      |
+
+| Title          | VARCHAR(255) | Ja      |
+
+| Description    | TEXT         | Nein    |
+
+| Priority       | INTEGER      | Ja      |
+
+| Status         | VARCHAR(50)  | Ja      |
+
+| DueDate        | TIMESTAMP    | Nein    |
+
+| CompletedAt    | TIMESTAMP    | Nein    |
+
+| CreatedAt      | TIMESTAMP    | Ja      |
+
+| UpdatedAt      | TIMESTAMP    | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n Tasks
+
+\* User 1:n Tasks
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* AssignedUserId
+
+\* Status
+
+\* DueDate
+
+
+
+\---
+
+
+
+\## Tabelle: Appointments
+
+
+
+| Feld           | Typ          | Pflicht |
+
+| -------------- | ------------ | ------- |
+
+| AppointmentId  | UUID         | Ja      |
+
+| ProjectId      | UUID         | Ja      |
+
+| AssignedUserId | UUID         | Ja      |
+
+| Title          | VARCHAR(255) | Ja      |
+
+| Description    | TEXT         | Nein    |
+
+| StartDate      | TIMESTAMP    | Ja      |
+
+| EndDate        | TIMESTAMP    | Ja      |
+
+| Status         | VARCHAR(50)  | Ja      |
+
+| CreatedAt      | TIMESTAMP    | Ja      |
+
+| UpdatedAt      | TIMESTAMP    | Ja      |
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n Appointments
+
+\* User 1:n Appointments
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* AssignedUserId
+
+\* StartDate
+
+
+
+\---
+
+
+
+\## Tabelle: Photos
+
+
+
+| Feld        | Typ           | Pflicht |
+
+| ----------- | ------------- | ------- |
+
+| PhotoId     | UUID          | Ja      |
+
+| ProjectId   | UUID          | Ja      |
+
+| Category    | VARCHAR(50)   | Ja      |
+
+| FileName    | VARCHAR(255)  | Ja      |
+
+| StoragePath | TEXT          | Ja      |
+
+| Latitude    | DECIMAL(10,7) | Nein    |
+
+| Longitude   | DECIMAL(10,7) | Nein    |
+
+| CreatedBy   | UUID          | Ja      |
+
+| CreatedAt   | TIMESTAMP     | Ja      |
+
+
+
+\### Kategorien
+
+
+
+\* Vorher
+
+\* Während
+
+\* Nachher
+
+\* Mangel
+
+\* Abnahme
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n Photos
+
+\* User 1:n Photos
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* Category
+
+\* CreatedAt
+
+
+
+\---
+
+
+
+\## Tabelle: Documents
+
+
+
+| Feld         | Typ          | Pflicht |
+
+| ------------ | ------------ | ------- |
+
+| DocumentId   | UUID         | Ja      |
+
+| ProjectId    | UUID         | Ja      |
+
+| DocumentType | VARCHAR(100) | Ja      |
+
+| FileName     | VARCHAR(255) | Ja      |
+
+| StoragePath  | TEXT         | Ja      |
+
+| UploadedBy   | UUID         | Ja      |
+
+| UploadedAt   | TIMESTAMP    | Ja      |
+
+
+
+\### Dokumenttypen
+
+
+
+\* Angebot
+
+\* Auftrag
+
+\* Rechnung
+
+\* Plan
+
+\* Vertrag
+
+\* PDF
+
+\* Sonstiges
+
+
+
+\### Beziehungen
+
+
+
+\* Project 1:n Documents
+
+\* User 1:n Documents
+
+
+
+\### Indizes
+
+
+
+\* ProjectId
+
+\* DocumentType
+
+\* UploadedAt
+
 
 
