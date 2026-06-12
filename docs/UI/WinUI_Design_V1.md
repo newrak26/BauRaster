@@ -234,5 +234,109 @@ Dunkelgrau = Archiv
 
 \* Responsive Panels
 
+\# BauRaster WinUI Design V1
 
+
+
+\## Hauptlayout
+
+
+
+Links:
+
+\- Suche
+
+\- Filter
+
+\- Projektliste
+
+
+
+Mitte:
+
+\- Karte
+
+\- Baustellenpins
+
+
+
+Rechts:
+
+\- Projektdetails
+
+\- Fortschritt
+
+\- Schnellaktionen
+
+
+
+\## Dashboard
+
+
+
+\- Neue Anfragen
+
+\- Offene Termine
+
+\- KV in Arbeit
+
+\- Laufende Baustellen
+
+\- Fehlende Fotodok
+
+
+
+\## Projektdetails
+
+
+
+Tabs:
+
+\- Übersicht
+
+\- Aufgaben
+
+\- Termine
+
+\- Fotos
+
+\- Dokumente
+
+\- Historie
+
+
+
+\## Farben
+
+
+
+\- Grau = Aufnahme
+
+\- Gelb = Termin
+
+\- Orange = KV
+
+\- Blau = KV versendet
+
+\- Türkis = Ausführung
+
+\- Rot = Fotodok
+
+\- Grün = Abschluss
+
+\- Dunkelgrau = Archiv
+
+
+
+\## Design
+
+
+
+\- WinUI 3
+
+\- Microsoft Fluent Design
+
+\- Dark Mode
+
+\- Light Mode
 
